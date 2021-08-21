@@ -47,3 +47,67 @@ form button:hover {
   color: white;
   background: #5fe65f;
 }
+
+.todo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.todo-list {
+  list-style: none;
+  min-width: 30vw;
+}
+
+.todo {
+  background: white;
+  color: gray;
+  margin: 1rem;
+  font-size: 1.5rem;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  transition: all ease 0.2s;
+}
+
+.todo-item {
+  padding: 0rem 0.5rem;
+}
+
+.todo li {
+  flex: 1;
+}
+
+.check-mark {
+  padding: 1rem;
+  font-size: 1.5rem;
+
+  border: none;
+  color: white;
+  background: rgb(62, 194, 9);
+
+  cursor: pointer;
+  transition: all ease 0.3s;
+}
+
+.check-mark:hover {
+  background: yellowgreen;
+}
+
+.trash-mark:hover {
+  background: #eb882c;
+}
+
+.trash-mark {
+  padding: 1rem;
+  font-size: 1.5rem;
+
+  border: none;
+  color: white;
+  background: #e7562e;
+
+  cursor: pointer;
+  transition: all ease 0.3s;
+}
