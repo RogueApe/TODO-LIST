@@ -3,6 +3,9 @@ const todoInput = document.querySelector(".todo-input");
 const todoList = document.querySelector(".todo-list");
 const todoButton = document.querySelector(".todo-button");
 
+const checkedBtn = document.querySelector(".check-mark");
+const deleteBtn = document.querySelector(".trash-mark");
+
 // FUNCTIONS
 const addTodo = function (event) {
   // prevent FORM from submitting
@@ -33,5 +36,35 @@ const addTodo = function (event) {
   todoInput.value = "";
 };
 
+const deleteItem = function (event) {
+  // Declare variable which is an event target
+  const item = event.target;
+
+  // DELETE
+  if (item.className === "trash-mark") {
+    // Target the event's parent to be delete as well
+    const todo = item.parentElement;
+    // add fall animation
+    todo.classList.add("fall");
+
+    todo.addEventListener("transitionend", function () {
+      todo.remove();
+    });
+  }
+
+  // CHECK
+  if (item.className === "check-mark") {
+    const todo = item.parentElement;
+    // TOGGLE the class 'completed' declare in CSS
+    todo.classList.toggle("completed");
+  }
+};
+
+// function deleteItem(e) {
+//   e.target.remove();
+//   e.stopPropagation();
+// }
+
 // EVENT LISTENERS
 todoButton.addEventListener("click", addTodo);
+todoList.addEventListener("click", deleteItem);
