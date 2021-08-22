@@ -69,7 +69,7 @@ form button:hover {
   justify-content: space-between;
   align-items: center;
 
-  transition: all ease 0.2s;
+  transition: all ease 0.5s;
 }
 
 .todo-item {
@@ -80,6 +80,7 @@ form button:hover {
   flex: 1;
 }
 
+/* TRASH MARK & CHECK MARK */
 .check-mark {
   padding: 1rem;
   font-size: 1.5rem;
@@ -110,4 +111,19 @@ form button:hover {
 
   cursor: pointer;
   transition: all ease 0.3s;
+}
+
+.fa-minus,
+.fa-check {
+  pointer-events: none;
+}
+
+.completed {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+.fall {
+  transform: translateY(8rem) rotateZ(15deg);
+  opacity: 0;
 }
